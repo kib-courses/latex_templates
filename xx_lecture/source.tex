@@ -1,0 +1,199 @@
+\documentclass{beamer}
+\usetheme{metropolis} 
+\usecolortheme{rose}
+
+\hypersetup{unicode=true}
+
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{hyphenat}
+\usepackage[russian,english]{babel}          % Use metropolis theme
+\usepackage{wrapfig}
+
+\usepackage[normalem]{ulem}  % для зачекивания текста
+
+\usepackage{caption}
+\captionsetup[figure]{name=Рисунок }
+\newcommand{\рис}[1]{рис.\ref{#1}}
+\newcommand{\Рис}[1]{Рис.\ref{#1}}
+
+
+\captionsetup[table]{name=Таблица~№}
+\newcommand{\таблицa}[1]{таблица~№\ref{#1}} % именительный падеж
+\newcommand{\таблицы}[1]{таблицы~№\ref{#1}} % родительный падеж
+\newcommand{\таблице}[1]{таблице~№\ref{#1}} % дательный и предложный падеж
+\newcommand{\таблицу}[1]{таблицу~№\ref{#1}} % винительный падеж
+\newcommand{\таблицей}[1]{таблицей~№\ref{#1}} % творительный падеж 
+\newcommand{\Таблицa}[1]{Таблица~№\ref{#1}} % именительный падеж
+\newcommand{\Таблицы}[1]{Таблицы~№\ref{#1}} % родительный падеж
+\newcommand{\Таблице}[1]{Таблице~№\ref{#1}} % дательный и предложный падеж
+\newcommand{\Таблицу}[1]{Таблицу~№\ref{#1}} % винительный падеж
+\newcommand{\Таблицей}[1]{Таблицей~№\ref{#1}} % творительный падеж 
+
+\setbeamertemplate{footline}[frame number] % указывает на каждой странице общее количество страниц
+
+% Указывайте все новые термины в \termdef команде. А уже известные ранее или из других курсов в \term
+\newcommand{\termdef}[1]{\textbf{\textit{#1}}}
+\newcommand{\term}{\textit}
+% Диалог с аудиторией.
+\newcommand{\auditorium}[1]{\color{red}{\textbf{#1}}}
+
+% \setbeamercolor{auditorium}{fg=red}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% TODO ! напишите здесь название вашей лекции
+\title{Лекция XX. Название вашей лекции.}
+% TODO ! замените на дату проведения этой лекции. Например \date{14 апреля 2019}
+\date{14 жерминаля пятого года Великой Революции}
+\author{Максимилиан Максимилианович Робеспьер}
+\institute{Москва, МГТУ им.Бауманка,\\ \href{https://t.me/iu8info}{\textbf{КИБ}}}
+% \titlegraphic{\includegraphics[width=2cm]{logo_ur.jpg}}
+
+% TODO ! замените https://github.com/kib-courses/latex_templates на ссылку ВАШЕГО спецкурса!
+\titlegraphic{\small \href{https://github.com/kib-courses/latex_templates}{Название вашего спецкурса}}
+
+\begin{document}
+  \maketitle
+    
+  \begin{frame}{План лекции}
+  	% TODO ! добавте в план все ваши секции, кроме "Вопросы для самопроверки", "Домашнее задание" и "Список материалов"
+    \begin{enumerate}
+	\item \nameref{section:main_latex_opportunity}
+	\end{enumerate}
+ \end{frame}
+    
+    
+\section{Основные возможности \LaTeX}\label{section:main_latex_opportunity}
+
+\begin{frame}{Формулы}\label{frame:example1}
+   \LaTeX -- это удобно!
+   Нужна
+   пробельная
+   строка,
+   чтобы
+   начать новый абзац!
+   
+   Можно делать формулы внутри текста: $(x+y)^2=x^2 + 2 \cdot x \cdot y + y^2$ и дальше писать
+   текст.
+   
+   А можно снаружи:
+   \begin{equation}\label{eq:example1}
+   	f(x) = \frac{A_0}{2} + \sum \limits_{n=1}^{\infty} A_n \cos \left( \frac{2 n \pi x}{\nu} - \alpha_n \right) 
+   \end{equation}
+   
+   И ссылаться на формулу: \eqref{eq:example1}, 
+   которая находится на слайде №\ref{frame:example1}.  
+\end{frame}
+
+\begin{frame}{Редактирование текста}
+	Текст может быть 
+	\textbf{жирным}, 
+	\textit{курсивным},
+	\underline{подчёркнутым},
+	\sout{зачёркнутым},
+	\textcolor{red}{красного цвета}, \textcolor{green}{зелёного} 	
+	и даже \textcolor[RGB]{18,10,143}{цвета ультрамарин}! 
+	
+	Текст может быть:
+	\Huge очень огромным,
+	\huge огромным,
+	\Large очень большим,
+	\large большим,
+	\normalsize нормальным.
+	
+	Так же можно сделать шрифт
+	\small маленьким,
+	\footnotesize размером с ссылку,
+	\tiny или крошечным.
+	
+	Можно так же \fbox{выделять текст рамкой}.
+	\normalsize
+	А этот текст нормальный, т.к. в исходниках выше этой строки есть \textit{\\normalsize} команда.
+\end{frame}
+
+\begin{frame}{Изображения}
+	\begin{wrapfigure}{r}{5cm}
+		\includegraphics[width=2cm]{../pic/kib_old_logo.png}
+		\caption{Логотип в виде пеликана, кормящего грудью своих детей}
+		\label{figure:pelican_1}
+	\end{wrapfigure}
+	Вы можете добавлять изображения.
+	Текст при этом будет обрамляться.
+	
+	Ссылаться на изображения так же можно: \рис{figure:pelican_1}.
+	
+	Не забываем добавлять изображения в pic папку.
+	Лучше использовать векторную графику. 
+	Из растровой: png.
+\end{frame}
+
+\begin{frame}{Списки}
+	Списки могут быть нумерованными. цифры(по умолчанию) или буквы. Например \textbf{[a]}:
+	\begin{enumerate}[a]
+		\item~ один
+		\item~ два
+		\item~ три
+	\end{enumerate}
+	и ненумерованными:
+	\begin{itemize}
+		\item~ один
+		\item~ два
+	\end{itemize}
+	Их можно вкладывать друг в друга:
+	\begin{enumerate}
+		\item Первый пункт:
+		\begin{enumerate}
+			\item первый подпункт
+		\end{enumerate}
+		\item второй пункт.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	Сам фрейм может не иметь заголовка. Как этот.
+\end{frame}
+
+\begin{frame}
+	Можно делать таблицы:
+
+	\begin{center}
+	\small 
+		\begin{table}
+		\begin{tabular}{ l l }
+			$0 \mapsto (3234, 25, 1, 1731) $ &  $0 \mapsto (2540, 55, 0, 1731)$ \\
+			$1 \mapsto (18400, 45, 0, 3137)$ & $0 \mapsto (2540, 55, 0, 1731)$  \\
+			$1 \mapsto (903, 19, 0, 4121)$  & $0 \mapsto (1875, 45, 0, 4121)$  \\
+			$0 \mapsto (854, 21, 1, 4121)$  & $1 \mapsto (702, 21, 0, 4121)$  \\
+			$1 \mapsto (903, 19, 0, 4121)$  & $0 \mapsto (1875, 45, 0, 4121)$  \\
+			$0 \mapsto (28400, 41, 1, 3137)$ & $0 \mapsto (25040, 55, 0, 1731)$  \\
+		\end{tabular}
+		\caption{Это пример из второй лекции по DS спецкурсу}
+		\label{table:example}
+		\end{table}
+	\end{center}
+	И можно ссылаться на \таблицу{table:example}.
+\end{frame}
+
+ 
+\section{tikz. Основы}
+
+\begin{frame}
+Tikz -- это очень круто. Вот примеры: \url{http://www.texample.net/tikz/examples/all/}
+
+Можно делать очень качественную векторную графику. 
+А потом её вставлять в \LaTeX научные статьи.
+
+Лучше их хранить в ОТДЕЛЬНОМ файле
+
+\end{frame}
+
+
+	
+
+
+  
+\end{document}
