@@ -60,7 +60,7 @@
 \begin{document}
   \maketitle
     
-  \begin{frame}{План лекции}
+  \begin{frame}{План лекции}\label{frame:plan}
   	% TODO ! добавте в план все ваши секции, кроме "Вопросы для самопроверки", "Домашнее задание" и "Список материалов"
     \begin{enumerate}
 	\item \nameref{section:main_latex_opportunity}
@@ -202,9 +202,62 @@ Tikz -- это очень круто. Вот примеры: \url{http://www.tex
 
 \end{frame}
 
+\section{Дополнительно}\label{section:another}
 
+\begin{frame}{Команды termdef и term}
+Используйте команды \textbf{termdef} для определения терминов,
+которые определяются впервые и \textbf{term} -- для терминов, которые
+уже должны быть известны слушателям.
+
+\termdef{Группа $(G, \odot)$} --  
+\term{множество} $G$, 
+на котором определена \term{ассоциативная} \term{бинарная операция} $\odot$\footnote{
+	$\forall g_1, g_2, g_3 \in G 
+	\Rightarrow 
+	(g_1 \odot g_2) \odot g_3 = 
+	g_1 \odot (g_2 \odot g_3)$
+}, 
+причём для этой операции имеется \term{нейтральный элемент}\footnote{
+	$\exists g_{netral} \in G: 
+		\forall g \in G \Rightarrow 
+			g  \odot g_{netral} \equiv 
+			g_{netral}  \odot g \equiv g$
+}, и каждый элемент множества имеет 
+\term{обратный элемент} 
+относительно операции $\odot$\footnote{
+	$\forall g \in G \Rightarrow 
+		\exists g^{-1} \in G: 
+			g \odot g^{-1} \equiv 
+			g^{-1} \odot g \equiv 
+			g_{netral} $
+}
+\end{frame}
+
+\begin{frame}{Вопросы для самопроверки \& Список материалов}
+	В конце не забудьте сделать блоки 
+	\textbf{Вопросы для самопроверки}
+	и 
+	\textbf{Список материалов}.
 	
+	Вопросы для самопроверки -- это несколько слайдов с вопросами по лекции.
+	
+	Список материалов -- это литература, ссылки на GitHub по данной лекции
+	
+	Эти блоки \text{не нужно} включать в план\footnote{См. слайд №\ref{frame:plan}}.
+\end{frame}
 
+
+\section{Вопросы для самопроверки}
+
+% \begin{frame}
+% TODO
+% \end{frame}
+
+\section{Список материалов}
+
+% \begin{frame}
+% TODO
+% \end{frame}
 
   
 \end{document}
