@@ -24,16 +24,34 @@ LaTeX шаблоны для спецкурсов, открытых лекций 
 
 ## Работа с шаблоном
 
+Откройте:
+* xx_lecture.tex
+* user.tex
+* kib.tex
+
+
+![](pic/open_all.png)
+
+
+
 В TeXStudio зайдите **Options --> Configure TeXStudio**.
 Во вкладке **Build** поменяйте **Default Compiler** на **LuaLaTeX**. 
 Остальное оставте без изменения
 
-Перетащите папки **xx_lecture**, **header** **pic** в свой проект.
+![](pic/options_configure_build_LuaLaTex.png)
 
-Перетащите .gitignore
+Попробуйте запустить.
+Должен появится файл **xx_lecture.pdf**.
 
-Переименуйте файл **xx_lecture/xx_lecture.tex** в номер лекции вашего спецкурса.
-Переименуйте папку **xx_lecture** в номер лекции вашего спецкурса.
+----
+
+----
+
+Дальнейшие шаги:
+1. Перетащите папки **xx_lecture**, **header** **pic** в свой проект.
+2. Перетащите .gitignore
+3. Переименуйте файл **xx_lecture/xx_lecture.tex** в номер лекции вашего спецкурса.
+4. Переименуйте папку **xx_lecture** в номер лекции вашего спецкурса.
 
 С помощью **git add** заносите только **tex** файлы и картинки.
 
